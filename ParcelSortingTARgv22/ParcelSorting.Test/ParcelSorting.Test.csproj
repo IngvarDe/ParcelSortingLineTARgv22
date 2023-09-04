@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ParcelSortingTARgv22\ParcelSortingTARgv22.csproj" />
+  </ItemGroup>
+
 </Project>

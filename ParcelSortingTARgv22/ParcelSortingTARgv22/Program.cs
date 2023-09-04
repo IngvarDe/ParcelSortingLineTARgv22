@@ -2,7 +2,7 @@
 
 namespace ParcelSortingTARgv22
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -11,7 +11,7 @@ namespace ParcelSortingTARgv22
             FirstParcelLine(boxSizes);
         }
 
-        static bool FirstParcelLine(List<BoxSize> boxSizes)
+        public static bool FirstParcelLine(List<BoxSize> boxSizes)
         {
             bool parcelFits = false;
 
