@@ -31,7 +31,7 @@ namespace ParcelSorting.Test
             bool result = Program.FirstParcelLine(boxSizes);
 
 
-            Assert.Equal(result);
+            Assert.True(result);
         }
     }
 }

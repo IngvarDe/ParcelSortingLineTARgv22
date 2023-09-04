@@ -13,7 +13,7 @@ namespace ParcelSortingTARgv22
 
         public static bool FirstParcelLine(List<BoxSize> boxSizes)
         {
-            bool parcelFits = true;
+            bool parcelFits = false;
 
             foreach (BoxSize box in boxSizes)
             {
