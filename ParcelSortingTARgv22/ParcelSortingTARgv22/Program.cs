@@ -13,7 +13,7 @@ namespace ParcelSortingTARgv22
 
         public static bool FirstParcelLine(List<BoxSize> boxSizes)
         {
-            bool parcelFits = false;
+            bool parcelFits = true;
 
             foreach (BoxSize box in boxSizes)
             {
@@ -28,22 +28,32 @@ namespace ParcelSortingTARgv22
 
                     var cornerDiagonal = Math.Sqrt((sortingLine.Size * sortingLine.Size) + (lineWidth * lineWidth));
 
+                    var maxHeight = Math.Sqrt((lineWidth * lineWidth) - (box.Width * box.Width));
+                    var smallHeight = box.Length - maxHeight;
+                    var smallDiagonal = Math.Sqrt((smallHeight * smallHeight) + (box.Width * box.Width));
+
                     if (sortingLine.Size >= halfParcelDiagonal)
                     {
-                        Console.WriteLine("Sorting line width is {0} and it fits", sortingLine.Size);
+                        Console.WriteLine("Sorting line width is {0} and fits", sortingLine.Size);
                     }
+
                     else if (sortingLine.Size <= halfParcelDiagonal && lineWidth >= halfParcelDiagonal)
                     {
                         Console.WriteLine("Sorting line width is {0} and fits", sortingLine.Size);
                     }
-                    else if (sortingLine.Size >= cornerDiagonal)
+                    else if (sortingLine.Size >= smallDiagonal)
                     {
                         Console.WriteLine("Sorting line width is {0} and fits", sortingLine.Size);
                     }
+                    else if (sortingLine.Size <= halfParcelDiagonal && sortingLine.Size >= cornerDiagonal)
+                    {
+                        parcelFits = sortingLine.Size <= halfParcelDiagonal && sortingLine.Size >= cornerDiagonal;
 
-
-
-
+                        var result = parcelFits
+                            ? "Sorting line width is " + sortingLine.Size + " and it fits" :
+                            "It dosent fit to the sorting line and needs to be wider";
+                        Console.WriteLine(result);
+                    }
                     else
                     {
                         Console.WriteLine("It dosent fit to the sorting line and needs to be wider");

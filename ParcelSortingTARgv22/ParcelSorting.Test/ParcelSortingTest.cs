@@ -18,7 +18,7 @@ namespace ParcelSorting.Test
                     {
                         new SortingLineParam
                         {
-                            Size = 5,
+                            Size = 50,
                         },
                         new SortingLineParam
                         {
@@ -30,7 +30,8 @@ namespace ParcelSorting.Test
 
             bool result = Program.FirstParcelLine(boxSizes);
 
-            Assert.False(result);
+
+            Assert.Equal(result);
         }
     }
 }
