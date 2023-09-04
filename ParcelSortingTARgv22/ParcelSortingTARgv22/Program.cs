@@ -42,6 +42,8 @@ namespace ParcelSortingTARgv22
                     }
 
 
+
+
                     else
                     {
                         Console.WriteLine("It dosent fit to the sorting line and needs to be wider");
